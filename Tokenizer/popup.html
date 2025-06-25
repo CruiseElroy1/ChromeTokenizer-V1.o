@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokenizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;  /* Larger base font size for better readability */
+            padding: 20px;
+            width: 98vw;
+            max-width: 600px;
+            min-height: 400px;
+            background-color: #000000;
+            color: #E6F1FF;  /* High-contrast light color for all text */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 40px;  /* Increased gap for more padding between boxes */
+            line-height: 1.6;  /* Improved line height for accessibility */
+        }
+        #mainContent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 40px;
+            width: 100%;
+        }
+        #inputSection {
+            flex: 1 1 48%;  /* Slightly adjusted for equal and precise side-by-side */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;  /* Changed to align content at the top */
+            gap: 15px;  /* Increased gap for better internal spacing */
+            min-height: 350px;
+            text-align: left;
+            font-size: 18px;  /* Larger text */
+            font-weight: 400;
+        }
+        #results {
+            flex: 1 1 48%;  /* Match inputSection for equal width */
+            padding: 15px;  /* Increased padding for better internal spacing */
+            background-color: #1A1A1A;
+            border: 2px solid #00B4D8;
+            border-radius: 5px;
+            color: #E6F1FF;  /* High-contrast color for results text */
+            overflow-y: auto;
+            min-height: 350px;
+            max-height: 300px;
+            text-align: left;
+            font-size: 18px;  /* Larger text */
+            font-weight: 500;  /* Medium weight for readability */
+            line-height: 1.8;  /* Even more spacing for accessibility */
+            margin-top: 75px;  /* Decreased from 100px to move the output box a little higher */
+        }
+        #textInput {
+            width: 100%;
+            height: 350px;  /* Increased to match the output box frame */
+            padding: 10px;
+            border: 2px solid #00B4D8;
+            border-radius: 5px;
+            background-color: #1A1A1A;
+            color: #E6F1FF;  /* High-contrast color */
+            font-size: 18px;  /* Larger input text */
+            font-weight: 400;
+        }
+        #tokenizeButton {
+            width: 100%;
+            padding: 15px;  /* Increased padding for better touch targets */
+            background-color: #00B4D8;
+            color: #000000;
+            border: 1px solid #00B4D8;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;  /* Larger button text */
+            font-weight: 600;  /* Bold for emphasis */
+        }
+        #tokenizeButton:hover {
+            background-color: #0096C7;
+        }
+        h3 {
+            color: #E6F1FF;  /* Changed to match body color, removing blue */
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 20px;  /* Larger heading */
+            font-weight: 700;  /* Bold for headings */
+        }
+        ::selection {
+            background: #001100;  /* Very dark background */
+            color: #E6F1FF;  /* Light text for high contrast */
+        }
+        @media (max-width: 600px) {
+            body {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            #mainContent {
+                flex-direction: column;
+            }
+            #inputSection, #results {
+                flex: 1 1 auto;
+                width: 100%;  /* Full width on small screens */
+                font-size: 16px;  /* Slightly smaller on mobile for fit */
+            }
+            body {
+                gap: 20px;  /* Reduce gap on small screens to avoid excessive space */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mainContent">
+        <div id="inputSection">
+            <h3>Tokenize Text</h3>
+            <textarea id="textInput" placeholder="Paste or type text here..."></textarea>
+            <button id="tokenizeButton">Tokenize</button>
+        </div>
+        <div id="results"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html> 
